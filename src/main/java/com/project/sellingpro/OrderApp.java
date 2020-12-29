@@ -1,18 +1,17 @@
 package com.project.sellingpro;
 
+import com.project.sellingpro.member.*;
 import com.project.sellingpro.order.Order;
 import com.project.sellingpro.order.OrderService;
 import com.project.sellingpro.order.OrderServiceImpl;
-import com.project.sellingpro.member.Grade;
-import com.project.sellingpro.member.Member;
-import com.project.sellingpro.member.MemberService;
-import com.project.sellingpro.member.MemberServiceImpl;
 
 public class OrderApp {
 
     public static void main(String[] args) {
-        MemberService memberService =new MemberServiceImpl();
-        OrderService orderService =new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+
+        MemberService memberService =appConfig.memberService();
+        OrderService orderService =appConfig.orderService();
 
         Long memberId = 1L;
         Member member =new Member(memberId,"memberA", Grade.VIP);
