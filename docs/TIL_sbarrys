@@ -30,3 +30,23 @@ SOLID - 객체지향을 구현을 할 때 지켜야할 5가지 원칙이다
   >
   > 인터페이스 분리 원칙 ( 각 클라이언트마다 다양한 인터페이스로 설계 해주어야 한다.)
   > 의존성 역전 원칙   - >  그래서 IOC 를 생기게 된다.
+
+[ ctrl-alt-S ]
+grade - build and Run 을 둘다 IntelliJ 로 바꾸기
+인텔리제이에서 자바를 바로 실행해서 빠르다.
+
+=======================================================================================
+[역할과 구현체]
+역할을 사용할때 구현체 생성자를 이용해서 생성해주지 않으면 NullPointExceiption이 뜬다.
+
+
+[Junit Test]
+        //given
+        Member member = new Member(1L,"memberA", Grade.VIP);
+
+        //when
+        memberService.join(member);
+        Member findMember = memberService.findMember(1L);
+
+        //then
+        Assertions.assertThat(member).isEqualTo(findMember);
