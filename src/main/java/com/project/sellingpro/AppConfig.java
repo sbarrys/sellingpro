@@ -1,7 +1,7 @@
 package com.project.sellingpro;
 
 import com.project.sellingpro.discount.DiscountPolicy;
-import com.project.sellingpro.discount.FixDiscountPolicy;
+import com.project.sellingpro.discount.RateDiscountPolicy;
 import com.project.sellingpro.member.MemberRepository;
 import com.project.sellingpro.member.MemberService;
 import com.project.sellingpro.member.MemberServiceImpl;
@@ -11,12 +11,12 @@ import com.project.sellingpro.order.OrderServiceImpl;
 
 public class AppConfig {
 
-    private MemberRepository memberRepository() {
+    private MemberRepository memberRepository() {  //리턴값은 인터페이스로
         return new MemoryMemberRepository();
     }
 
     private DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 
     //기존에는 MemberService 에서 직접 memberRepository들을 생성하고 했었다. 그것은 배우가 배우를 직접 초빙하는 일과 같다.
