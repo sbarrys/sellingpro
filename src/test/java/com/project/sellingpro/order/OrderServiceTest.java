@@ -17,7 +17,7 @@ public class OrderServiceTest {
     OrderService orderService = appConfig.orderService();
 
     @Test
-    void createOrder(){
+    public void createOrder(){
         //given
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA",Grade.VIP);
