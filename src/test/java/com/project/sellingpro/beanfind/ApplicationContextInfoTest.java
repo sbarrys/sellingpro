@@ -12,7 +12,7 @@ public class ApplicationContextInfoTest {
 
     @Test
     @DisplayName("모든 빈 출력하기")
-    void findAllBean(){
+    public void findAllBean(){
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
             Object bean = ac.getBean(beanDefinitionName);
@@ -23,7 +23,7 @@ public class ApplicationContextInfoTest {
 
     @Test
     @DisplayName("애플리케이션 빈 출력하기")
-    void findApplicationAllBean(){
+    public void findApplicationAllBean(){
         String[] beanDefinitionNames = ac.getBeanDefinitionNames();
         for (String beanDefinitionName : beanDefinitionNames) {
             BeanDefinition beanDefinition = ac.getBeanDefinition(beanDefinitionName);
