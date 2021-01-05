@@ -16,7 +16,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ApplicationContextExtendsFindTest {
-    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext();
+    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TestConfig.class);
     @Test
     @DisplayName("부모 타입으로 조회시, 자식이 여럿있으면 중복 오류")
     void findBeanByParentTypeDuplicate(){
