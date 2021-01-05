@@ -1,11 +1,13 @@
 package com.project.sellingpro.discount;
 
+import com.project.sellingpro.annotation.MainDiscountPolicy;
 import com.project.sellingpro.discount.DiscountPolicy;
 import com.project.sellingpro.member.Grade;
 import com.project.sellingpro.member.Member;
 import org.springframework.stereotype.Component;
 
 @Component
+@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private int discountPercent = 10;

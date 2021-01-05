@@ -1,5 +1,6 @@
 package com.project.sellingpro.order;
 
+import com.project.sellingpro.annotation.MainDiscountPolicy;
 import com.project.sellingpro.discount.DiscountPolicy;
 import com.project.sellingpro.member.Member;
 import com.project.sellingpro.member.MemberRepository;
@@ -13,7 +14,7 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
     //Appconfig 가 실제 구현체를 탑재한 생성자를 만들어서  넣어준다.
-    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("rateDiscountPolicy") DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
